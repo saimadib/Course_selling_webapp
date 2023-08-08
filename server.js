@@ -8,7 +8,15 @@ const cors=require("cors");
 
 
 app.use(express.json());
-app.use(cors());
+// CORS configuration
+const corsOptions = {
+  origin: 'https://courseselling.netlify.app',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  optionsSuccessStatus: 204, // Some legacy browsers (IE11, various SmartTVs) choke on 200
+};
+
+app.use(cors(corsOptions));
 
 mongoose.connect("mongodb+srv://admin-saim:3xzUdBv3qYEghdhR@cluster0.fzd8b5a.mongodb.net/course_selling")
 
