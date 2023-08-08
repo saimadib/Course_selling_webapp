@@ -10,7 +10,7 @@ const cors=require("cors");
 app.use(express.json());
 // CORS configuration
 const corsOptions = {
-  origin: 'http://localhost:5173/',
+  origin: 'http://localhost:5173',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
   optionsSuccessStatus: 204, // Some legacy browsers (IE11, various SmartTVs) choke on 200
