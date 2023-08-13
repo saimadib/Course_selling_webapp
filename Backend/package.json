@@ -9,6 +9,7 @@
     "path": "^0.12.7"
   },
   "scripts": {
+    "dev":"node server.js",
     "start": "cd ../frontend && npm run build && rm -rf ../Backend/public && mkdir -p ../Backend/public && mv ./dist/* ../Backend/public && cd ../Backend && node server.js"
   },
   "name": "course_selling_project",
