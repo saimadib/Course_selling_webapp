@@ -10,7 +10,7 @@
   },
   "scripts": {
     "dev":"node server.js",
-    "start": "cd ../frontend && npm run build && rm -rf ../Backend/public && mkdir -p ../Backend/public && mv ./dist/* ../Backend/public && cd ../Backend && node server.js"
+    "start": "cd ../frontend && npm run build && rm -rf ../Backend/public && mkdir -p ../Backend/public && mv ./dist/* ../Backend/public && cd ../Backend && pm2 dev"
   },
   "name": "course_selling_project",
   "version": "1.0.0",
