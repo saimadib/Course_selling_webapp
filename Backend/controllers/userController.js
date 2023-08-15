@@ -67,17 +67,24 @@ const errorMessage = (res, error) => {
           message: "Invalid credentials. Please try again.",
         });
       }
+
+      console.log("1");
   
       const isMatch = await bcrypt.compare(password, user.password);
+
+      console.log("2");
       if (!isMatch) {
         return res.status(200).json({
           status: "fail",
           message: "Invalid credentials. Please try again.",
         });
       }
-      const expirationTime = Math.floor(Date.now() / 1000) + (60 * 60); // 24 hour from now
+
+      console.log("3");
+      const expirationTime = Math.floor(Date.now() / 1000) + (60 * 60); 
   
       const token = jwt.sign({ id: user._id }, process.env.JWT_USERSECRET,{ expiresIn: expirationTime });
+      console.log("4");
       return res.status(200).json({
         token,
         user: {
