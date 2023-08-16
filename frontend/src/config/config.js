@@ -1,5 +1,5 @@
 var config = {};
 
-config.base_url = "https://courseselling.zenservers.tech";
+config.base_url = "http://courseselling.zenservers.tech";
 
 export default config;
