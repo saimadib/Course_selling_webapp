@@ -10,7 +10,7 @@ const cors=require("cors");
 app.use(express.json());
 // CORS configuration
 app.use(cors());
-mongoose.connect("mongodb+srv://admin-saim:3xzUdBv3qYEghdhR@cluster0.fzd8b5a.mongodb.net/course_selling")
+mongoose.connect("mongodb+srv://admin-saim:3xzUdBv3qYEghdhR@cluster0.fzd8b5a.mongodb.net/course_selling");
 
 // Import and use your route handlers here
 const adminRouter = require("./routes/adminRoutes");
@@ -19,16 +19,14 @@ const userRouter = require("./routes/userRoutes");
 app.use("/api/admin", adminRouter);
 app.use("/api/user", userRouter);
 
-console.log("1");
 app.use(express.static("public"));
 
-console.log("2");
+
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname + "/public/index.html"));
 });
 
-console.log("3");
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
